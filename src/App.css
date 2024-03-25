@@ -1,0 +1,45 @@
+:root {
+  --grid-bg-color: aquamarine;
+  --cell-bg-color: cornflowerblue;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+}
+
+.game-status {
+  text-align: center;
+}
+
+.morpion-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--grid-bg-color);
+}
+
+.morpion-grid button {
+  font-size: 80px;
+  width: 125px;
+  height: 125px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--cell-bg-color);
+}
+
+.morpion-grid .row {
+  display: flex;
+  gap: 20px;
+}
