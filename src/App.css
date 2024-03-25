@@ -5,6 +5,8 @@
 
 body {
   font-family: sans-serif;
+  background-color: #15171e;
+  color: #ffffff;
 }
 
 .container {
@@ -27,16 +29,30 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-color: var(--grid-bg-color);
 }
 
 .morpion-grid button {
+  color: #ffffff;
   font-size: 80px;
   width: 125px;
   height: 125px;
   border: none;
+  border-radius: 16px;
   cursor: pointer;
-  background-color: var(--cell-bg-color);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.morpion-grid button:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+}
+
+.morpion-grid button[data-content="X"] {
+  background-color: #e24a4a;
+}
+
+.morpion-grid button[data-content="O"] {
+  background-color: #0cbe8f;
 }
 
 .morpion-grid .row {

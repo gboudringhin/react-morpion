@@ -4,7 +4,7 @@ import Square from './components/Square'
 
 function App() {
 
-  const [currentPlayer, setCurrentPlayer] = useState('X');
+  const [currentPlayer, setCurrentPlayer] = useState("X");
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [status, setStatus] = useState(false);
 
@@ -33,7 +33,7 @@ function App() {
   }
 
   const handleClick = (index) => {
-    const nextPlayer = currentPlayer === 'X' ? 'O' : 'X'
+    const nextPlayer = currentPlayer === "O" ? "X" : "O"
 
     if (squares[index] || status) {
       return;
