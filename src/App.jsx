@@ -7,6 +7,7 @@ function App() {
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [status, setStatus] = useState(false);
+  const [counter, setCounter] = useState(1)
 
   const checkIfWin = (squares) => {
     const layouts = [
@@ -48,6 +49,8 @@ function App() {
         setCurrentPlayer(currentPlayer);
       }
 
+      setCounter(counter + 1)
+
       return squaresCopy;
     })
 
@@ -59,6 +62,7 @@ function App() {
     setSquares(Array(9).fill(null))
     setCurrentPlayer("X")
     setStatus(false)
+    setCounter(1)
   }
 
   return (
@@ -66,9 +70,12 @@ function App() {
       <h1 className="title">Morpion react</h1>
 
       <div className="game-status">
-        <h2>Joueur : {currentPlayer}</h2>
+        <h2>Joueur : {currentPlayer} - Action n° {counter}</h2>
         {status && 
           <p>Le joueur {currentPlayer} a gagné la partie ! <button onClick={handleRestart}>Relancer</button></p>
+        }
+        {counter > 9 && 
+          <p>La partie est terminée ! <button onClick={handleRestart}>Relancer</button></p>
         }
       </div>
 
